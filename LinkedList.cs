@@ -48,5 +48,23 @@ namespace LinkedList
                 temp = temp.next;
             }
         }
+        //Creating Add method
+        internal void AddFirst(int data)               
+        {
+            //creating a node object of the Node class
+            Node node = new Node(data);                  
+            if (this.head == null)
+            {
+                node.next = null;
+            }
+            else
+            {
+                node.next = this.head;
+
+            }
+            this.head = node;
+            Console.WriteLine("{0} inserted into linked list", node.data);
+
+        }
     }
 }
