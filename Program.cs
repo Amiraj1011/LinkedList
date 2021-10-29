@@ -11,9 +11,12 @@ namespace LinkedList
             //calling append method and provideing data         
             list.Append(56);
             list.Append(70);
-            //calling display method
-            //list.Display();
+            //calling InsertAt method
             list.InsertAt(2, 30);
+            list.Display();
+            Console.WriteLine();
+            //calling delete method
+            list.DeleteFirst();
             list.Display();
             Console.ReadLine();
         }

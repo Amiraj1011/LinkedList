@@ -107,6 +107,16 @@ namespace LinkedList
                 temp.next = node;
             }
         }
+        //This method for delete first node
+        internal void DeleteFirst()
+        {
+            if (this.head == null)
+                Console.WriteLine("The list is empty");
+            //for show deleted node
+            Console.WriteLine("Deleted node : " + this.head.data);
+            //assigning next node address to the head node
+            this.head = this.head.next;
+        }
 
     }
 }
