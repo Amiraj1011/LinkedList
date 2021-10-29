@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace LinkedList
 {
     /// <summary>
-    /// UC1 - simple linked list program
-    /// </summary>
+    /// linked list program
+    /// </summary> 
     public class LinkedList
     {
         //Creating head variable of node class
@@ -43,16 +43,16 @@ namespace LinkedList
                 return;
             }
             while (temp != null)
-            { 
+            {
                 Console.Write(temp.data + " ");
                 temp = temp.next;
             }
         }
         //Creating Add method
-        internal void AddFirst(int data)               
+        internal void AddFirst(int data)
         {
             //creating a node object of the Node class
-            Node node = new Node(data);                  
+            Node node = new Node(data);
             if (this.head == null)
             {
                 node.next = null;
@@ -67,10 +67,10 @@ namespace LinkedList
 
         }
         //creating append method
-        internal void Append(int data)       
+        internal void Append(int data)
         {
             //creating a node object of the Node class
-            Node node = new Node(data);     
+            Node node = new Node(data);
             if (this.head == null)
             {
                 this.head = node;
@@ -82,9 +82,31 @@ namespace LinkedList
                 {
                     temp = temp.next;
                 }
+                //linking nodes
                 temp.next = node;
             }
             Console.WriteLine("{0} appended into linked list", node.data);
         }
+        //this InsertAt method for insert at any position 
+        internal void InsertAt(int position, int data)
+        {
+            //Creating object of node class
+            Node node = new Node(data);
+            if (position < 1)
+                Console.WriteLine("Invalid position");
+            else
+            {
+                Node temp = head;
+                while (position != 2)
+                {
+                    temp = temp.next;
+                    position--;
+                }
+                //Linking nodes 
+                node.next = temp.next;
+                temp.next = node;
+            }
+        }
+
     }
 }
