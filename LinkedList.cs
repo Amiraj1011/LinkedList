@@ -13,6 +13,7 @@ namespace LinkedList
     {
         //Creating head variable of node class
         internal Node head;
+        public int place;
         //creating add method for adding
         internal void Add(int data)
         {
@@ -138,7 +139,7 @@ namespace LinkedList
             new_node.next = null;
         }
         //This search method for finding elements in list
-        internal Node Search(int data)
+        public Node Search(int data)
         {
             //while loop for checking element up to last element
             while (this.head != null)
@@ -153,6 +154,29 @@ namespace LinkedList
                 this.head = this.head.next;
             }
             return null;
+        }
+        //This method for searching element and adding another element after that element 
+        public void SearchAndInsertAfter(int data, int element)
+        {
+            Node temp = this.head;
+            Node newNode = new Node(element);
+
+            while (temp != null)
+            {
+                //if condition for finding element
+                if (temp.data == data)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("{0} Element Is Found", 30);
+                    Console.WriteLine("Adding element {0} after {1}",40,30);
+                    //inserting new element
+                    Node temp1 = temp.next;
+                    temp.next = newNode;
+                    newNode.next = temp1;
+                    break;
+                }
+                temp = temp.next;
+            }
         }
     } 
 }
