@@ -128,24 +128,14 @@ namespace LinkedList
         //this method for delete last node from linked list
         internal void DeleteLast()                          
         {
-            if (this.head == null)
-                Console.WriteLine("The  list is empty!");
-            //for checking if there is only 1 element in the list
-            if (this.head.next == null)                                     
-                Console.WriteLine("Only 1 element in the list");
-
-            Node node = head;
-            //it checks for two values and show whether its null or not
+            Node new_node = this.head;
+            //checking last element is null or not using while loop
             {
-            while (node.next.next != null)                                 
-                node = node.next;
+            while (new_node.next.next != null)                                 
+                new_node = new_node.next;
             }
-            Console.WriteLine("The deleted node is: " + node.next.data);
-            node.next = null;
-
-        }
-
-
-
+            Console.WriteLine("The deleted node is: " + new_node.next.data);
+            new_node.next = null;
+        }   
     }
 }
