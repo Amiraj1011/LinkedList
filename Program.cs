@@ -16,7 +16,7 @@ namespace LinkedList
             list.Display();
             Console.WriteLine();
             //calling delete method
-            list.DeleteLast();
+            list.Search(70);
             list.Display();
             Console.ReadLine();
         }

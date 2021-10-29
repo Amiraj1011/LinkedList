@@ -126,16 +126,33 @@ namespace LinkedList
             this.head = this.head.next;
         }
         //this method for delete last node from linked list
-        internal void DeleteLast()                          
+        internal void DeleteLast()
         {
             Node new_node = this.head;
             //checking last element is null or not using while loop
             {
-            while (new_node.next.next != null)                                 
-                new_node = new_node.next;
+                while (new_node.next.next != null)
+                    new_node = new_node.next;
             }
             Console.WriteLine("The deleted node is: " + new_node.next.data);
             new_node.next = null;
-        }   
-    }
+        }
+        //This search method for finding elements in list
+        internal Node Search(int data)
+        {
+            //while loop for checking element up to last element
+            while (this.head != null)
+            {
+                //if condition for matching data value with element from list
+                if (this.head.data == data)
+                {
+                    Console.WriteLine("Element is found");
+                    return this.head;
+                }
+                //incrementing head value       
+                this.head = this.head.next;
+            }
+            return null;
+        }
+    } 
 }
