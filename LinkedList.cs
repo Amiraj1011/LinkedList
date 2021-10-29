@@ -178,5 +178,33 @@ namespace LinkedList
                 temp = temp.next;
             }
         }
+        //this method for searching element and delete
+        internal void SearchAndDelete(int data)
+        {
+            Node temp = head;
+            while (temp.next != null)
+            {
+                if (temp.next.data == data)
+                {
+                    Console.WriteLine("\nDeleted Node : " + temp.next.data);
+                    temp.next = temp.next.next;
+
+                }
+                temp = temp.next;
+            }
+        }
+        //This method for counting elements in list
+        internal int Size()           
+        {
+            int count = 1;
+
+            Node temp = this.head;
+            while (temp.next != null)
+            {
+                count++;
+                temp = temp.next;
+            }
+            return count;
+        }
     } 
 }

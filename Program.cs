@@ -10,16 +10,16 @@ namespace LinkedList
             LinkedList list = new LinkedList();
             //calling append method and provideing data         
             list.Append(56);
+            list.Append(30);
             list.Append(70);
             //calling InsertAt method
-            list.InsertAt(2, 30);
-            list.Display();
-            Console.WriteLine();
-            //calling delete method
-            //list.Search(30);
-            list.Display();
             list.SearchAndInsertAfter(30, 40);
             list.Display();
+            //calling search and delete method
+            list.SearchAndDelete(40);
+            //Display size of list
+            Console.WriteLine("\nSize of list : "+list.Size());  
+            Console.WriteLine();
             Console.ReadLine();
         }
     }
