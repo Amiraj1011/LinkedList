@@ -18,6 +18,7 @@ namespace LinkedList
         {
             //creating node object for Node class
             Node node = new Node(data);
+            //This if condition for checking head is null or not
             if (this.head == null)
             {
                 this.head = node;
@@ -29,14 +30,17 @@ namespace LinkedList
                 {
                     temp = temp.next;
                 }
+                //linking nodes 
                 temp.next = node;
             }
+            //Display inserted element
             Console.WriteLine("{0} inserted into linked list", node.data);
         }
         //creating display method to show list
         internal void Display()
         {
             Node temp = this.head;
+            //if condition for checking head is null or not
             if (temp == null)
             {
                 Console.WriteLine("LinkedList is empty");
@@ -44,15 +48,17 @@ namespace LinkedList
             }
             while (temp != null)
             {
+                //for display linked list
                 Console.Write(temp.data + " ");
                 temp = temp.next;
             }
         }
-        //Creating Add method
+        //Creating Add method to adding element to link list
         internal void AddFirst(int data)
         {
             //creating a node object of the Node class
             Node node = new Node(data);
+            //if condition for checking head is null or not  
             if (this.head == null)
             {
                 node.next = null;
@@ -62,15 +68,17 @@ namespace LinkedList
                 node.next = this.head;
 
             }
+            //linking elements
             this.head = node;
             Console.WriteLine("{0} inserted into linked list", node.data);
 
         }
-        //creating append method
+        //creating append method for adding element to llinked list
         internal void Append(int data)
         {
             //creating a node object of the Node class
             Node node = new Node(data);
+            //if condition for checking head is null or not
             if (this.head == null)
             {
                 this.head = node;
@@ -117,6 +125,27 @@ namespace LinkedList
             //assigning next node address to the head node
             this.head = this.head.next;
         }
+        //this method for delete last node from linked list
+        internal void DeleteLast()                          
+        {
+            if (this.head == null)
+                Console.WriteLine("The  list is empty!");
+            //for checking if there is only 1 element in the list
+            if (this.head.next == null)                                     
+                Console.WriteLine("Only 1 element in the list");
+
+            Node node = head;
+            //it checks for two values and show whether its null or not
+            {
+            while (node.next.next != null)                                 
+                node = node.next;
+            }
+            Console.WriteLine("The deleted node is: " + node.next.data);
+            node.next = null;
+
+        }
+
+
 
     }
 }
